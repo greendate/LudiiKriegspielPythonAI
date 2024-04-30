@@ -43,7 +43,7 @@ public class LudiiPythonAI extends AI
 	 */
 	public LudiiPythonAI()
 	{
-		this.friendlyName = "Example Ludii Python AI";
+		this.friendlyName = "Kriegspiel Python Agent Example";
 	}
 	
 	//-------------------------------------------------------------------------

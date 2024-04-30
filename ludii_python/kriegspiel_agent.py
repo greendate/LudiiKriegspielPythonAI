@@ -1,5 +1,5 @@
 """
-This code is a short example demonstrating the usage of Kriegspiel-specific Ludii functions.
+This code is a short example demonstrating the usage of Kriegspiel-specific Ludii functions
 For more information regarding Ludii AI development, please refer to the following: 
      * https://www.ludii.games/index.php
      * https://ludiitutorials.readthedocs.io/en/latest/basic_ai_api.html
@@ -80,7 +80,7 @@ class KriegspielAgent:
         """
         * Messages received from the referee after the last try
         * It contains messages announcing the position of all captures, checks, and check directions,
-          or simply no messages if the move is legal
+          or simply no messages if the move is legal without checks and captures
         * Otherwise, if the selected try is impossible to play, the only message announced is "Illegal move" 
         """
         last_try_messages = context.getNotes(self.player)
@@ -97,8 +97,8 @@ class KriegspielAgent:
         if pseudo_legal_moves.get(0).actionDescriptionStringShort() == "Promote":
             """
             * A situation in which the agent's pawn needs to be promoted after the last move
-            * In this case, pseudoLegalMoves would contain only promotion moves with different pieces
-            * Use pseudoLegalMove.what() to select a move containing the desired promotion piece
+            * In this case, pseudo_legal_moves would contain only promotion moves with different pieces
+            * Use pseudo_legal_move.what() to select a move containing the desired promotion piece
             * We will play a random promotion move
             """
             return self.choose_random_move(pseudo_legal_moves)
